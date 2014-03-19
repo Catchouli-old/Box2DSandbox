@@ -27,7 +27,7 @@ namespace vlr
 		for (b2Body* body = _physWorld.GetBodyList(); body; body = body->GetNext())
 		{
 			// Simulate rolling resistance
-			// Simple version of rolling resistance using formula given by spec?
+			// Simple version of rolling resistance using formula given by spec
 			// Frr = -Crr * v
 			// A better implementation of rolling resistance would
 			// counteract the movement due to other forces
@@ -36,7 +36,7 @@ namespace vlr
 			// the vector perpendicular to the normal of the contact and then multiply that
 			// by the coefficient of friction of the contact
 			for (b2ContactEdge* contactEdge = body->GetContactList(); contactEdge; contactEdge = contactEdge->next)
-			{
+			{ 
 				b2Contact* contact = contactEdge->contact;
 
 				// Get fixtures
