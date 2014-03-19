@@ -26,17 +26,13 @@ namespace vlr
 	{
 		for (b2Body* body = _physWorld.GetBodyList(); body; body = body->GetNext())
 		{
-			//body->ApplyForceToCenter(body->getForces(), true);
-			//return;
-			if (!body->IsActive())
-				continue;
-
 			// Simulate rolling resistance
 			// Simple version of rolling resistance using formula given by spec?
 			// Frr = -Crr * v
-			// However, wouldn't rolling resistance counteract the force due to gravity
-			// such that a coefficient of 1 would equal no movement?
-			// To calculate this, you could resolve the gravity into the direction of
+			// A better implementation of rolling resistance would
+			// counteract the movement due to other forces
+			// such that a coefficient of 1 would equal no movement
+			// To calculate this, you could resolve the forces on the body into the direction of
 			// the vector perpendicular to the normal of the contact and then multiply that
 			// by the coefficient of friction of the contact
 			for (b2ContactEdge* contactEdge = body->GetContactList(); contactEdge; contactEdge = contactEdge->next)
@@ -46,7 +42,7 @@ namespace vlr
 				// Get fixtures
 				b2Fixture* fixA = contact->GetFixtureA();
 				b2Fixture* fixB = contact->GetFixtureB();
-				
+
 				b2Fixture* bodyFix = (fixA->GetBody() == body ? fixA : fixB);
 
 				if (bodyFix->GetShape()->GetType() == b2Shape::e_circle)
@@ -111,7 +107,7 @@ namespace vlr
 		// Update physics system
 		double time = glfwGetTime();
 		float stepTime = (1.0f / _timeStep);
-		while (_lastPhysicsUpdate + stepTime < time)
+		//while (_lastPhysicsUpdate + stepTime < time)
 		{
 			if (_simulationRunning)
 				doStep();
