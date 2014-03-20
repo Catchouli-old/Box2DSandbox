@@ -430,11 +430,11 @@ namespace vlr
 			long len;
 			char* buffer;
 
-			// Reset world
-			Serialiser::destroyWorld(this, &_physWorld);
-
 			// Disable simulation
 			disableSim();
+
+			// Reset world
+			Serialiser::destroyWorld(this, &_physWorld);
 
 			// Load document
 			FILE* file = fopen(_lastString.c_str(), "rb");

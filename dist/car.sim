@@ -3142,7 +3142,7 @@
    "bodyCount" : 12,
    "camFollow" : 0,
    "camFollowOn" : true,
-   "camOrthoScale" : 17.0,
+   "camOrthoScale" : 21.0,
    "camPos" : {
       "x" : -189.556152343750,
       "y" : 4.226343631744385
@@ -3427,5 +3427,6 @@
          },
          "referenceAngle" : 1.572041749954224
       }
-   ]
+   ],
+   "timeStep" : 60
 }

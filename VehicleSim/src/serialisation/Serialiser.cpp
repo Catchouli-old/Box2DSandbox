@@ -33,6 +33,8 @@ namespace vlr
 		root["camPos"]["x"] = vehicleSim->_camera.getPos().x;
 		root["camPos"]["y"] = vehicleSim->_camera.getPos().y;
 
+		root["timeStep"] = vehicleSim->_timeStep;
+
 		root["camOrthoScale"] = vehicleSim->_orthoScale;
 
 		// Save bodies
@@ -418,6 +420,8 @@ namespace vlr
 			root["camPos"]["y"].asFloat(), 0));
 
 		vehicleSim->_orthoScale = root["camOrthoScale"].asFloat();
+
+		vehicleSim->_timeStep = root["timeStep"].asFloat();
 
 		world->SetGravity(gravity);
 

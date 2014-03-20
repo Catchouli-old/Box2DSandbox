@@ -989,7 +989,7 @@ namespace vlr
 			createBoolOption("Enable motor", parent, 5, ypos,
 			GetterSetter<b2RevoluteJointDef, bool>(&_revoluteJointDef,
 			&b2RevoluteJointDef::enableMotor));
-		_jointOptionsUpdatables.push_back(bo);
+		_updatableOptions.push_back(bo);
 		ypos += LINE_HEIGHT;
 
 		// Max force
@@ -997,7 +997,7 @@ namespace vlr
 			createFloatOption("  Max force", parent, 5, ypos,
 			GetterSetter<b2RevoluteJointDef, float>(&_revoluteJointDef,
 			&b2RevoluteJointDef::maxMotorTorque));
-		_jointOptionsUpdatables.push_back(fo);
+		_updatableOptions.push_back(fo);
 		ypos += LINE_HEIGHT;
 
 		// Motor speed
@@ -1005,7 +1005,7 @@ namespace vlr
 			createFloatOption("  Motor speed", parent, 5, ypos,
 			GetterSetter<b2RevoluteJointDef, float>(&_revoluteJointDef,
 			&b2RevoluteJointDef::motorSpeed));
-		_jointOptionsUpdatables.push_back(fo);
+		_updatableOptions.push_back(fo);
 		ypos += LINE_HEIGHT;
 
 		// Create input options
@@ -1022,8 +1022,7 @@ namespace vlr
 			createBoolOption("Collide connected", parent, 5, ypos,
 			GetterSetter<b2WeldJointDef, bool>(&_weldJointDef,
 			&b2WeldJointDef::collideConnected));
-		bo->getCheckBox()->SetDisabled(true);
-		_jointOptionsUpdatables.push_back(bo);
+		_updatableOptions.push_back(bo);
 		ypos += LINE_HEIGHT;
 
 		// Reference angle
@@ -1031,8 +1030,7 @@ namespace vlr
 			createFloatOption("Reference angle", parent, 5, ypos,
 			GetterSetter<b2WeldJointDef, float>(&_weldJointDef,
 			&b2WeldJointDef::referenceAngle));
-		fo->getTextBox()->SetDisabled(true);
-		_jointOptionsUpdatables.push_back(fo);
+		_updatableOptions.push_back(fo);
 		ypos += LINE_HEIGHT;
 
 		// Frequency
@@ -1040,7 +1038,7 @@ namespace vlr
 			createFloatOption("Frequency", parent, 5, ypos,
 			GetterSetter<b2WeldJointDef, float>(&_weldJointDef,
 			&b2WeldJointDef::frequencyHz));
-		_jointOptionsUpdatables.push_back(fo);
+		_updatableOptions.push_back(fo);
 		ypos += LINE_HEIGHT;
 
 		// Damping ratio
@@ -1048,7 +1046,7 @@ namespace vlr
 			createSliderOption("Damping ratio", parent, 5, ypos,
 			GetterSetter<b2WeldJointDef, float>(&_weldJointDef,
 			&b2WeldJointDef::dampingRatio), 0.0f, 1.0f);
-		_jointOptionsUpdatables.push_back(so);
+		_updatableOptions.push_back(so);
 		ypos += LINE_HEIGHT;
 	}
 
@@ -1062,8 +1060,7 @@ namespace vlr
 			createBoolOption("Collide connected", parent, 5, ypos,
 			GetterSetter<b2WheelJointDef, bool>(&_wheelJointDef,
 			&b2WheelJointDef::collideConnected));
-		bo->getCheckBox()->SetDisabled(true);
-		_jointOptionsUpdatables.push_back(bo);
+		_updatableOptions.push_back(bo);
 		ypos += LINE_HEIGHT;
 
 		// Enable motor
@@ -1071,7 +1068,7 @@ namespace vlr
 			createBoolOption("Enable motor", parent, 5, ypos,
 			GetterSetter<b2WheelJointDef, bool>(&_wheelJointDef,
 			&b2WheelJointDef::enableMotor));
-		_jointOptionsUpdatables.push_back(bo);
+		_updatableOptions.push_back(bo);
 		ypos += LINE_HEIGHT;
 
 		// Max force
@@ -1079,7 +1076,7 @@ namespace vlr
 			createFloatOption("  Max force", parent, 5, ypos,
 			GetterSetter<b2WheelJointDef, float>(&_wheelJointDef,
 			&b2WheelJointDef::maxMotorTorque));
-		_jointOptionsUpdatables.push_back(fo);
+		_updatableOptions.push_back(fo);
 		ypos += LINE_HEIGHT;
 
 		// Motor speed
@@ -1087,7 +1084,7 @@ namespace vlr
 			createFloatOption("  Motor speed", parent, 5, ypos,
 			GetterSetter<b2WheelJointDef, float>(&_wheelJointDef,
 			&b2WheelJointDef::motorSpeed));
-		_jointOptionsUpdatables.push_back(fo);
+		_updatableOptions.push_back(fo);
 		ypos += LINE_HEIGHT;
 
 		// Frequency
@@ -1095,7 +1092,7 @@ namespace vlr
 			createFloatOption("Frequency", parent, 5, ypos,
 			GetterSetter<b2WheelJointDef, float>(&_wheelJointDef,
 			&b2WheelJointDef::frequencyHz));
-		_jointOptionsUpdatables.push_back(fo);
+		_updatableOptions.push_back(fo);
 		ypos += LINE_HEIGHT;
 
 		// Damping ratio
@@ -1103,7 +1100,7 @@ namespace vlr
 			createSliderOption("Damping ratio", parent, 5, ypos,
 			GetterSetter<b2WheelJointDef, float>(&_wheelJointDef,
 			&b2WheelJointDef::dampingRatio), 0.0f, 1.0f);
-		_jointOptionsUpdatables.push_back(so);
+		_updatableOptions.push_back(so);
 		ypos += LINE_HEIGHT;
 
 		// Create input options

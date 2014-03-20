@@ -107,7 +107,7 @@ namespace vlr
 		// Update physics system
 		double time = glfwGetTime();
 		float stepTime = (1.0f / _timeStep);
-		//while (_lastPhysicsUpdate + stepTime < time)
+		while (_lastPhysicsUpdate + stepTime < time)
 		{
 			if (_simulationRunning)
 				doStep();
